@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../../Unit03-W03-D02-JDBC2-With-Hikari/hikari-lab/pom.xml" />
       </list>
     </option>
   </component>
