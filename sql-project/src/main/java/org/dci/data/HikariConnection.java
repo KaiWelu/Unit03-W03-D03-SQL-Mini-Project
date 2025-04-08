@@ -24,6 +24,7 @@ public class HikariConnection {
     }
 
     public Connection getConnection() throws SQLException {
+        System.out.println("lets go");
         return dataSource.getConnection();
     }
 }
