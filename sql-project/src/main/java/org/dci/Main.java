@@ -3,8 +3,8 @@ package org.dci;
 import org.dci.data.DepartmentDAO;
 import org.dci.data.EmployeeDAO;
 import org.dci.data.HikariConnection;
+import org.dci.models.Employee;
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -30,11 +30,6 @@ public class Main {
         //                          Date.valueOf(currentDate), 40000, "Research");
 
 
-
-        // delete some random departments
-        //departmentDAO.deleteDepartment("Engineering");
-        //departmentDAO.deleteDepartment(50);
-
         // add some departments
         departmentDAO.insertDepartment("Engineering", "Berlin");
         departmentDAO.insertDepartment("Human Resources", "Berlin");
@@ -42,10 +37,16 @@ public class Main {
         departmentDAO.insertDepartment("Construction", "Hamburg");
         departmentDAO.insertDepartment("Research", "London");
 
-        // departmentDAO.updateDepartment(55, "Engineering & Physics", "Paris");
+        System.out.println(employeeDAO.getEmployee(6).toString());
+        Employee testEmployee = employeeDAO.getEmployee("Kai", "Weluda");
+        System.out.println(testEmployee.toString());
 
-        //System.out.println(departmentDAO.getDepartment("Accounting").toString());
-        //System.out.println(departmentDAO.getDepartment(31).toString());
+        testEmployee.setEmail("yolo@yolo.com");
+        testEmployee.setSalary(70000);
+        employeeDAO.updateEmployee(testEmployee);
+        System.out.println(testEmployee);
+
+
     }
 
     private static LocalDate getRandomDate() {
